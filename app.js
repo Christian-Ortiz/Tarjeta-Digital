@@ -52,7 +52,7 @@ desplegables.forEach(desplegable => {
 		menu.style.width = `${width}%`;
 		menu.style.opacity = `${op}`;
 		
-    })
+    });
 });
 
 function rain() {
@@ -104,7 +104,10 @@ function next() {
 
 	let last_active_dot = document.querySelector('.slider .dots li.active');
     last_active_dot.classList.remove('active');
-    dots[active].classList.add('active')
+    dots[active].classList.add('active');
+	
+	//reiniciamos el intervalo
+	intervalo.reiniciar(7000);
 }
 
 function prev() {
@@ -114,30 +117,32 @@ function prev() {
     $slider.style.transition = "margin-left .5s";
     setTimeout(() => {
         $slider.style.transition = "none";
-        $slider.insertAdjacentElement("afterbegin", sliderSectionLast)
-        $slider.style.marginLeft = "-100%"
+        $slider.insertAdjacentElement("afterbegin", sliderSectionLast);
+        $slider.style.marginLeft = "-100%";
     }, 500);
-
-	let last_active_dot = document.querySelector('.slider .dots li.active');
+	
+    let last_active_dot = document.querySelector('.slider .dots li.active');
     last_active_dot.classList.remove('active');
-    dots[active].classList.add('active')
+    dots[active].classList.add('active');
+	
+	//reiniciamos el intervalo
+	intervalo.reiniciar(7000);
 }
 
 $btnRight.addEventListener("click", function () {
 	active = active < lengthItems ? active + 1 : 0;
-    next()
+    next();
 })
 
 $btnLeft.addEventListener("click", function () {
 	active = active > 0 ? active - 1 : lengthItems;
-    prev()
+    prev();
 })
 
-setInterval(() => {
+var intervalo = new Intervalo(function() {
 	active = active < lengthItems ? active + 1 : 0;
-    next()
-	
-}, 6000);
+    next();
+}, 3000);
 
 dots.forEach((li, key) => {
     li.addEventListener('click', ()=>{
@@ -149,12 +154,16 @@ dots.forEach((li, key) => {
 			let i = 1;
 			while (i < anterior){
 				let $sliderSectionFirst = document.querySelectorAll(".list .img")[0];
-				$slider.insertAdjacentElement("beforeend", $sliderSectionFirst)
-				i++
+				$slider.insertAdjacentElement("beforeend", $sliderSectionFirst);
+				i++;
 			}
 			let last_active_dot = document.querySelector('.slider .dots li.active');
 			last_active_dot.classList.remove('active');
-			dots[active].classList.add('active')
+			dots[active].classList.add('active');
+
+			 //reiniciamos el intervalo
+			intervalo.reiniciar(7000);
+			 
 		 }else if (anterior > active){
 			anterior = ((anterior - active) + 1);
 
@@ -162,27 +171,29 @@ dots.forEach((li, key) => {
 			while (i < anterior){
 				let sliderSection = document.querySelectorAll(".list .img");
    			 let sliderSectionLast = sliderSection[sliderSection.length -1];
-				$slider.insertAdjacentElement("afterbegin", sliderSectionLast)
-				i++
+				$slider.insertAdjacentElement("afterbegin", sliderSectionLast);
+				i++;
 			}
 
 			let last_active_dot = document.querySelector('.slider .dots li.active');
 			last_active_dot.classList.remove('active');
-			dots[active].classList.add('active')	
+			dots[active].classList.add('active');	
 
+			 //reiniciamos el intervalo
+			intervalo.reiniciar(7000);
 		 }
-    })
-})
+    });
+});
 //fin slider
 
 //boton compartir
 const boton = document.querySelector('#compartir');
 if ('share' in navigator) {
-	boton.addEventListener('click', share)
+	boton.addEventListener('click', share);
 	function share() {
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
-			text: 'Técnico en Computación e Informática, Diseñador Gráfico, Desarrollador de software...',
+			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
 			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
 		})
 		.then(()=>{
@@ -194,4 +205,32 @@ if ('share' in navigator) {
 	}
 }else{
 	alert('Abre esta tarjea digital en tú movíl para poder compartir.');
+}
+
+// Objeto Intervalo para poder reiniciar, detener y comenzar
+function Intervalo(fn, t) {
+    var intervaloObj = setInterval(fn, t);
+
+    this.detener = function() {
+        if (intervaloObj) {
+            clearInterval(intervaloObj);
+            intervaloObj = null;
+        }
+        return this;
+    }
+
+    // iniciar el temporizador usando la configuración actual (si aún no se está ejecutando)
+    this.comenzar = function() {
+        if (!intervaloObj) {
+            this.detener();
+            intervaloObj = setInterval(fn, t);
+        }
+        return this;
+    }
+
+    // comenzar con un nuevo intervalo, detener el intervalo actual
+    this.reiniciar = function(nuevoT) {
+        t = nuevoT;
+        return this.detener().comenzar();
+    }
 }
