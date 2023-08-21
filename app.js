@@ -182,7 +182,7 @@ if ('share' in navigator) {
 	function share() {
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
-			text: 'Técnico en Computación e Informática, Diseñador Gráfico, Desarrollador de software y mucho más ...',
+			text: 'Técnico en Computación e Informática, Diseñador Gráfico, Desarrollador de software...',
 			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
 		})
 		.then(()=>{
