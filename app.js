@@ -188,7 +188,6 @@ dots.forEach((li, key) => {
 
 //boton compartir
 const boton = document.querySelector('#compartir');
-const file = new File([], "imagenes/qr.png", { type: "image/png" });
 if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	function share() {
@@ -196,7 +195,6 @@ if ('share' in navigator) {
 			title: 'Christian Jhulino Ortiz Cholán',
 			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
 			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
-			files: [file],
 		})
 		.then(()=>{
 
