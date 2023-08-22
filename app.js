@@ -188,10 +188,10 @@ dots.forEach((li, key) => {
 
 //boton compartir
 const boton = document.querySelector('#compartir');
+const file = new File(data, "./imagenes/qr.svg", { type: "image/svg" });
 if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	function share() {
-		const file = new File(data, "./imagenes/qr.svg", { type: "image/svg" });
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
 			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
@@ -206,7 +206,7 @@ if ('share' in navigator) {
 		})
 	}
 }else{
-	alert('Abre esta tarjea digital en tú movíl para poder compartir.');
+	navigator.clipboard.writeText('https://christian-ortiz.github.io/Tarjeta-Digital/');
 }
 
 // Objeto Intervalo para poder reiniciar, detener y comenzar
