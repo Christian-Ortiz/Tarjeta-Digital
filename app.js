@@ -204,13 +204,13 @@ if ('share' in navigator) {
 
 		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qr-compartir.png');
 		const blob = await img.blob();
-		const file = new File([blob], 'qr-compartir.png', {type: 'image/png'});
+		const file = new File([blob], 'image.png', {type: 'image/png'});
 
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
 			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
 			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
-			files: [file],
+			files: [file]
 		})
 		.then(()=>{
 
