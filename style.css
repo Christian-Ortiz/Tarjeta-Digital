@@ -21,7 +21,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.4;
-    color: var(--negro);
+    color: var(--blanco);
     background-color: var(--negro);
 }
 
@@ -32,7 +32,8 @@ body {
 	right: -100%;
 	width: 50px;
 	height: 50px;
-	background: #fff;
+	background: var(--blanco);
+	color: var(--boton);
 	border: 2px solid var(--boton);
 	display: flex;
 	justify-content: center;
@@ -45,7 +46,7 @@ body {
 
 .go-top:hover{
 	background: var(--boton);
-	color: #fff;
+	color: var(--blanco);
 	border: 2px solid var(--blanco);
 }
 
