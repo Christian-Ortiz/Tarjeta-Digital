@@ -202,15 +202,15 @@ if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	async function share() {
 
-		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qr.png');
-		const blob = await img.blob();
-		const file = new File([blob], 'qr.png', {type: 'image/png'});
+		let img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qr-compartir.jpg');
+		let file = await img.blob();
+		file = new File([file], 'qr-compartir.jpg', {type: 'image/jpg'});
 
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
 			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
 			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
-			files: [file],
+			files: [file]
 		})
 		.then(()=>{
 
