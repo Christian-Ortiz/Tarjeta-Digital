@@ -200,11 +200,11 @@ dots.forEach((li, key) => {
 const boton = document.querySelector('#compartir');
 if ('share' in navigator) {
 	boton.addEventListener('click', share);
-	function share() {
+	async function share() {
 
-		let img = url('imagenes/qr-compartir.jpg');
-		let file = img.blob();
-		file = new File([file], 'qr-compartir.jpg', {type: 'image/jpg'});
+		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qr-compartir.jpg');
+		const blob = await img.blob();
+		const file = new File([blob], 'qr-compartir.jpg', {type: 'image/jpg'});
 
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
