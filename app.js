@@ -202,7 +202,7 @@ if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	async function share() {
 
-		let img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qr-compartir.jpg');
+		let img = await url('imagenes/qr-compartir.jpg');
 		let file = await img.blob();
 		file = new File([file], 'qr-compartir.jpg', {type: 'image/jpg'});
 
