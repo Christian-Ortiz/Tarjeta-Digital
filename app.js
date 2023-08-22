@@ -204,7 +204,7 @@ if ('share' in navigator) {
 
 		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qr.png');
 		const blob = await img.blob();
-		const file = new File([blob], 'image.png', {type: 'image/png'});
+		const file = new File([blob], 'qr.png', {type: 'image/png'});
 
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
