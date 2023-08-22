@@ -202,15 +202,15 @@ if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	async function share() {
 
-		let img = await url('imagenes/qr.png');
-		let file = await img.blob();
-		file = new File([file], 'food.jpg', {type: 'image/png'});
+		const img = await fetch('https://picsum.photos/200/300');
+		const blob = await img.blob();
+		const file = new File([blob], 'image.png', {type: 'image/png'});
 
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
 			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
 			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
-			files: [file]
+			files: [file],
 		})
 		.then(()=>{
 
