@@ -188,7 +188,7 @@ dots.forEach((li, key) => {
 
 //boton compartir
 const boton = document.querySelector('#compartir');
-const file = new File([], "imagenes/qr.png", { type: "image/png" });
+const file = new File([], "imagenes/qr.svg", { type: "image/svg" });
 if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	function share() {
