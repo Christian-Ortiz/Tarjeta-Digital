@@ -1,3 +1,12 @@
+//loading
+window.onload = function() {
+	document.getElementById("loading-page").className += " loaded";
+    	document.getElementById("loader").className += " opzero";
+	document.getElementById("lastray").className += " finalray";
+    	document.body.classList.remove('hidden');
+}
+//fin loading
+
 let menuContent = document.querySelector('.cabecera');
 let desplegables = document.querySelectorAll('.boton');
 let listShow = document.querySelectorAll('.texto p');
@@ -17,8 +26,8 @@ window.onscroll = () => {
 	//Scoll Menu & Go Top & See Down (Styles) 
 	let arriba = window.pageYOffset; 
 	//Conditions 
-	if(arriba <= 60){ 
-		menuContent.style.top = '-60px';
+	if(arriba <= 400){ 
+		menuContent.style.top = '-100px';
 		//Ocultar Go Top 
 		goTop.style.right = '-100px';
 	}else{ 
@@ -55,8 +64,9 @@ desplegables.forEach(desplegable => {
     });
 });
 
+//fondo animado lluvia
 function rain() {
-	let amount = 200;
+	let amount = 150;
 	let body = document.querySelector('#fondo');
 	let i = 0;
 	while (i < amount){
@@ -79,7 +89,6 @@ function rain() {
 }
 rain();
 
-
 //slider
 const $slider = document.getElementById("list");
 let sliderSection = document.querySelectorAll(".list .img");
@@ -91,6 +100,7 @@ const $btnLeft = document.getElementById("prev");
 
 let lengthItems = sliderSection.length - 1;
 let active = 1;
+
 function next() {
     let $sliderSectionFirst = document.querySelectorAll(".list .img")[0];
 
@@ -131,17 +141,17 @@ function prev() {
 
 $btnRight.addEventListener("click", function () {
 	active = active < lengthItems ? active + 1 : 0;
-    next();
+    	next();
 })
 
 $btnLeft.addEventListener("click", function () {
 	active = active > 0 ? active - 1 : lengthItems;
-    prev();
+    	prev();
 })
 
 var intervalo = new Intervalo(function() {
 	active = active < lengthItems ? active + 1 : 0;
-    next();
+    	next();
 }, 3000);
 
 dots.forEach((li, key) => {
@@ -170,7 +180,7 @@ dots.forEach((li, key) => {
 			let i = 1;
 			while (i < anterior){
 				let sliderSection = document.querySelectorAll(".list .img");
-   			 let sliderSectionLast = sliderSection[sliderSection.length -1];
+   			 	let sliderSectionLast = sliderSection[sliderSection.length -1];
 				$slider.insertAdjacentElement("afterbegin", sliderSectionLast);
 				i++;
 			}
