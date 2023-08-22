@@ -202,7 +202,7 @@ if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	async function share() {
 
-		const img = await fetch('https://picsum.photos/200/300');
+		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qr.png');
 		const blob = await img.blob();
 		const file = new File([blob], 'image.png', {type: 'image/png'});
 
