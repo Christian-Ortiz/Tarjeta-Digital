@@ -456,7 +456,6 @@ header, main, footer {
 .cabecera .info h2 {
     font-size: 1rem;
     color: var(--blanco);
-    text-transform: uppercase;
 }
 .cabecera .info h4 {
     font-size: 0.75rem;
@@ -912,7 +911,6 @@ header, main, footer {
 .qr .caja-qr .subtitulo {
     color: var(--boton);
     opacity: .5;
-    font-size: 1.2rem;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -924,14 +922,12 @@ header, main, footer {
 .qr .caja-qr .carrera {
     color: var(--boton);
     opacity: .5;
-    font-size: 1.2rem;
     margin-bottom: 40px;
     text-align: center;
 }
 .qr .indicaciones {
     text-align: center;
     margin: 20px 5% 20px 5%;
-    font-size: 1.2rem;
 }
 .qr button {
     margin: 20px auto 30px auto;
