@@ -865,18 +865,73 @@ header, main, footer {
     height: 100% !important;
     border-radius: 32px;
 }
-
-.qr span{
+.qr {
+    gap: 0;
+}
+.qr .titulo-seccion {
     font-size: 1.6rem;
     color: var(--blanco);
     padding: .4rem 2rem;
     border-bottom: 1px solid var(--blanco);
     margin-top: 20px;
 }
-.qr img {
-    width: 90%;
-    height: auto;
+.qr .user {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items:end;
+    font-size: 1.2rem;
+    background: var(--fondo);
+    border: 4px solid var(--blanco);
+    border-radius: 50%;
+    position: relative;
+    bottom: -30px;
+}
+.qr .user i {
+    font-size: 45px;
+    color: var(--boton);
+    opacity: .2;
+}
+.qr .caja-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10% 20px 10%;
+    background: var(--blanco);
     border-radius: 32px;
+    box-shadow: 0 10px 10px var(--negro),
+                0 10px 20px var(--negro),
+                0 10px 25px var(--negro);
+}
+.qr .caja-qr .titulo {
+    color: var(--boton);
+    margin: 40px auto 15px auto;
+    text-align: center;
+}
+.qr .caja-qr .subtitulo {
+    color: var(--boton);
+    opacity: .5;
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.qr .caja-qr img {
+    width: 70%;
+    height: auto;
+    margin-bottom: 25px;
+}
+.qr .caja-qr .carrera {
+    color: var(--boton);
+    opacity: .5;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.qr .indicaciones {
+    text-align: center;
+    margin: 20px 5% 20px 5%;
+    font-size: 1.2rem;
 }
 .qr button {
     margin: 20px auto 30px auto;
