@@ -202,9 +202,9 @@ if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	async function share() {
 
-		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qr-compartir.png');
+		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qrCompartir.png');
 		const blob = await img.blob();
-		const file = new File([blob], 'qr-compartir.png', {type: 'image/png'});
+		const file = new File([blob], 'qrCompartir.png', {type: 'image/png'});
 
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
