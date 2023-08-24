@@ -654,7 +654,7 @@ header, main, footer {
     position: absolute;
     content: '';
     width: inherit;
-    height: 140px;
+    height: 160px;
     top: inherit;
     left: inherit;
     right: inherit;
@@ -666,7 +666,7 @@ header, main, footer {
     position: absolute;
     content: '';
     width: inherit;
-    height: 140px;
+    height: 160px;
     top: inherit;
     left: inherit;
     right: inherit;
@@ -674,6 +674,7 @@ header, main, footer {
     transform: skewY(14deg);
     z-index: 1;
 }
+
 /*cuerpo*/
 .seccion-cuerpo {
     display: flex;
@@ -687,9 +688,10 @@ header, main, footer {
 .links a {
     display: flex;
     align-items: center;
+    gap: 1rem;
     width: 90%;
-    height: 54px;
-    border-radius: 27px;
+    padding: .5rem;
+    border-radius: 1.9rem;
     border: 2px solid var(--blanco);
     background: var(--boton);
     transition: 0.3s;
@@ -700,9 +702,8 @@ header, main, footer {
     scale: 1.05;
 }
 .links a .icono {
-    width: 40px;
-    height: 40px;
-    margin-left: 7px;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -712,66 +713,160 @@ header, main, footer {
     border-radius: 50%;
 }
 .links a .texto {
-    margin-left: 8px;
-    font-size: 1.4em;
+    font-size: 1.2rem;
     color: var(--blanco);
 }
 
+/*desplegables*/
 .desplegables {
-    gap: 0;
+  margin-bottom: 1.2rem;
 }
-.desplegables .desplegable {
-    width: 100%;
-    padding: 0 5%;
-    background: var(--fondo);
+.desplegables .titulo-seccion {
+  font-size: 1.4rem;
+  color: var(--blanco);
+  padding: .4rem 2rem;
+  border-bottom: 1px solid var(--blanco);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
-.desplegables .desplegable .boton {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    width: 100%;
-    height: 54px;
-    padding: 0 10px;
-    font-size: 1.2em;
-    margin: 0 auto;
-    color: var(--blanco);
-    cursor: pointer;
-    border-bottom: 1px solid var(--blanco);
-    box-shadow: 0 0 10px var(--negro);
-    border-radius: 27px 27px;
+.details-menu {
+  padding: 0 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: var(--blanco);
 }
-.desplegables .desplegable .boton i:last-child {
-    margin-left: auto;
-    transition: transform .3s;
+.detail-item {
+  background: var(--fondo);
+  box-shadow: 0 5px 10px var(--negro);
+  border-radius: 1.9rem;
+  width: 100%;
+  color: var(--blanco);
 }
-.arrow i:last-child {
-    transform: rotate(180deg);
+.detail-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  background: var(--fondo);
+  padding: .9rem;
+  border-radius: 1.9rem;
+  border: 1px solid var(--blanco);
+  cursor: pointer;
 }
-.desplegables .desplegable .texto {
-    width: 0;
-    transition: height .4s;
-    height: 0;
-    opacity: 0;
-    margin: 20px 0;
-    box-shadow: 0 0 10px var(--negro);
+.detail-title > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
-.desplegables .desplegable .texto p {
-    padding: 5px 10px;
+.detail-title i {
+  color: var(--blanco);
+  transition: transform .3s;
 }
-.desplegables .desplegable .texto p:first-child {
-    padding-top: 20px;
+.detail-title > div i {
+  font-size: 1.2rem;
 }
-.desplegables .desplegable .texto p:last-child {
-    padding-bottom: 20px;
+.detail-title > div h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
 }
-.desplegables .desplegable .texto p i {
-    color: var(--boton);
-    margin-right: 10px;
+.detail-btn {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: var(--blanco);
+  cursor: pointer;
 }
-.desplegables .desplegable .texto p span {
-    font-weight: 700;
-    color: var(--boton);
+
+/*cambios internos en el div de detalles mis servicios*/
+.detail-item .servicios .titulo{
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  font-weight: 700;
+  color: var(--boton);
 }
+.detail-item .servicios .subtitulo {
+  color: var(--boton);
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2em;
+}
+.detail-item .servicios .subtitulo i {
+  color: var(--boton);
+}
+.detail-item .servicios p {
+  margin-left: 2.4rem;
+}
+.detail-item .servicios .contactame {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+}
+.detail-item .servicios .contactame a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: .4rem;
+}
+.detail-item .servicios .contactame a .icono {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--blanco);
+  border: 2px solid var(--blanco);
+  border-radius: 50%;
+}
+/*cambios internos en el div de detalles ubicacion*/
+.detail-item .ubicacion p {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 1.2rem;
+}
+.detail-item .ubicacion p i {
+  color: var(--boton);
+}
+/*Animar de 0 a altura automática.
+usando el truco de la cuadrícula css*/
+.details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 500ms ease-in-out;
+}
+.details > div {
+  margin: 0;
+  overflow: hidden;
+  transition: margin .4s;
+}
+.details p {
+  line-height: 25px;
+  text-align: justify;
+}
+.details p:not(.details p:last-child) {
+  margin-bottom: 1.2rem;
+}
+/*Clases dinámicas para javascript.*/
+.details-open {
+  grid-template-rows: 1fr;
+}
+.details-open > div {
+  margin: 1.2rem;
+}
+.detail-item-active .detail-title .detail-btn i {
+  transform: rotate(180deg);
+}
+
 /*slider*/
 .slider{
     display: block;
