@@ -8,7 +8,6 @@ window.onload = function() {
 //fin loading
 
 let menuContent = document.querySelector('.cabecera');
-let desplegables = document.querySelectorAll('.boton');
 let listShow = document.querySelectorAll('.texto p');
 
 //Scroll Efect 
@@ -26,7 +25,7 @@ window.onscroll = () => {
 	//Scoll Menu & Go Top & See Down (Styles) 
 	let arriba = window.pageYOffset; 
 	//Conditions 
-	if(arriba <= 400){ 
+	if(arriba <= 100){ 
 		menuContent.style.top = '-100px';
 		//Ocultar Go Top 
 		goTop.style.right = '-100px';
@@ -42,26 +41,19 @@ goTop.addEventListener('click', () => {
 	document.documentElement.scrollTop = 0;
 }); 
 
-
-desplegables.forEach(desplegable => {
-    desplegable.addEventListener('click', ()=>{
-        desplegable.classList.toggle('arrow');
-
-        let height = 0;
-		let op = 0;
-		let width = 0;
-        let menu = desplegable.nextElementSibling;
-        if (menu.clientHeight == "0"){
-			width=100;
-			menu.style.width = `${width}%`;
-            height = menu.scrollHeight;
-			op=1;
-        }
-        menu.style.height = `${height}px`;
-		menu.style.width = `${width}%`;
-		menu.style.opacity = `${op}`;
-		
-    });
+//desplegables
+//Obtenga todos los elementos detallados del DOM
+const detailsItem = document.querySelectorAll('.detail-item');
+//Recorre los elementos
+detailsItem.forEach(item => {
+	//Establecer un evento de clic para cada elemento
+	item.firstElementChild.addEventListener('click', () => {
+		//Seleccione el elemento de detalles de cada elemento.
+		const details = item.lastElementChild;
+		//Alternar clases abiertas
+		details.classList.toggle('details-open');
+		item.classList.toggle('detail-item-active');
+	});
 });
 
 //fondo animado lluvia
