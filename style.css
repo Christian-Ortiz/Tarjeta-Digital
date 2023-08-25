@@ -27,7 +27,7 @@ body {
 
 /*loading*/
 .hidden {
-    overflow: hidden;
+    overflow: hidden !important;
 }
 #lastray {
     position: fixed;
