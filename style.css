@@ -867,81 +867,126 @@ usando el truco de la cuadrícula css*/
   transform: rotate(180deg);
 }
 
+/*Slider efecto cubo diseño grafico*/
+.seccion-slider {
+
+}
+.slider-disenio-grafico {
+  position: relative;
+  height: 350px;
+}
+
+.slider-disenio-grafico {
+  background: transparent;
+  font-size: 1.2rem;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-disenio-grafico .swiper {
+  width: 290px;
+  height: 290px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  margin-left: -145px;
+  margin-top: -10%;
+}
+
+.slider-disenio-grafico .swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.slider-disenio-grafico .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+/*fin slider cubo diseño grafico*/
 /*slider*/
-.slider{
-    display: block;
-    align-items: center;
-    margin-top: 40px;
-    gap: 0rem;
+.slider1 {
+  position: relative;
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
 
+.slider1 .swiper {
+  width: 90%;
+  height: 100%;
+  border-radius: 2rem;
+}
 
-    position: relative;
-    width: 90%;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 32px;
+.slider1 .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.slider .list{
-    display: flex;
-    width: 1000%;
-    height: max-content;
-    margin-left: -100%;
+
+.slider1 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.slider .list .img {
-    width: 100%;
+
+.slider1 .autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--boton);
 }
-.slider .list img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+
+.slider1 .autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--boton);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
 }
-.slider .buttons{
-    position: absolute;
-    top: 45%;
-    left: 2%;
-    width: 96%;
-    display: flex;
-    justify-content: space-between;
-}
-.slider .buttons button{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+/*personalizacion swiper*/
+.slider1 .mySwiper :is(.swiper-button-next, .swiper-button-prev){
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
     background-color: var(--boton);
     color: var(--blanco);
-    border: none;
     font-size: 1.2rem;
     border: 2px solid var(--blanco);
-    cursor: pointer;
+
+  outline: 0;
+  color: var(--blanco);
 }
-.slider .dots{
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    color: var(--blanco);
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+.slider1 .mySwiper :is(.swiper-pagination-bullet){
+  background: var(--boton);
 }
-.slider .dots li{
-    list-style: none;
-    width: 10px;
-    height: 10px;
-    background-color: var(--boton);
-    margin: 0 10px;
-    border-radius: 20px;
-    transition: 0.5s;
-    opacity: .5;
-    cursor: pointer;
+.slider1 .mySwiper :is(.swiper-button-next, .swiper-button-prev)::after {
+  font-size: 0.75em;
 }
-.slider .dots li.active{
-    width: 30px;
-    opacity: 1;
-}
+/*fin swiper*/
 /*fin slider*/
 .google-maps {
     width: 90%;
@@ -1121,4 +1166,3 @@ footer {
         margin-right: 10px;
     }
 }
-
