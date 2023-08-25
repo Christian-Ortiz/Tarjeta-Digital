@@ -6,6 +6,7 @@
     <title>Christian Jhulino Ortiz Cholán</title>
     <link rel="icon" type="image/png" href="imagenes/icono.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
     <!--precarga de la pagina-->
@@ -156,6 +157,36 @@
                             <p>
                                 Diseño gráfico digital, banners, posters, flyers, calendarios, volantes, gigantografías, letreros, tarjetas de presentación...
                             </p>
+                            <p style="text-align: center; margin: 0; padding: 0; color: var(--boton);">Diseños realizados</p>
+                            <div class="slider-disenio-grafico">
+                                <!-- Swiper -->
+                                <div class="swiper mySwiper cubo">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="imagenes/D1.jpg" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="imagenes/D2.jpg" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="imagenes/D3.jpg" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="imagenes/D4.jpg" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="imagenes/D5.jpg" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="imagenes/D6.jpg" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="imagenes/D7.jpg" />
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
                             <span class="subtitulo"><i class="fa-solid fa-laptop-code"></i>En Desarrollo de software:</span>
                             <p>
                                 Aplicaciones de escritorio, desarrollo de páginas Web, tarjetas digitales, catálogos digitales, cartas de menú digitales...
@@ -189,56 +220,32 @@
             </div>
         </div>
         <!-- slider -->
-           <div class="seccion-cuerpo slider">
-                <div class="list" id="list">
-                    <div class="img">
-                        <img src="imagenes/1.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/2.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/3.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/4.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/5.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/6.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/7.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/8.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/9.jpg" alt="">
-                    </div>
-                    <div class="img">
-                        <img src="imagenes/10.jpg" alt="">
-                    </div>
+        <div class="slider1">
+              <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="imagenes/1.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="imagenes/2.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="imagenes/3.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="imagenes/4.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="imagenes/5.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="imagenes/6.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="imagenes/7.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="imagenes/8.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="imagenes/9.jpg" alt=""></div>
                 </div>
-                <div class="buttons">
-                    <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
-                    <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+                <div class="swiper-button-next" id="next"></div>
+                <div class="swiper-button-prev" id="prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20"></circle>
+                    </svg>
+                    <span></span>
                 </div>
-                <ul class="dots">
-                    <li></li>
-                    <li class="active"></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
             </div>
+            <!--fin swiper-->
+        </div>
         <!-- fin slider -->
         <div class="seccion-cuerpo desplegables">
             <div class="details-menu">
@@ -307,6 +314,7 @@
             <p><span>Copyright© 2023 - Todos los Derechos Reservados</span> | Christian Jhulino Ortiz Cholán - <span>Desarrollador Web</span></p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
     <script src="https://kit.fontawesome.com/c79dec2d79.js" crossorigin="anonymous"></script>
 </body>
