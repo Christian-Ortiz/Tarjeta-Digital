@@ -82,109 +82,50 @@ function rain() {
 rain();
 
 //slider
-const $slider = document.getElementById("list");
-let sliderSection = document.querySelectorAll(".list .img");
-let sliderSectionLast = sliderSection[sliderSection.length -1];
-let dots = document.querySelectorAll('.slider .dots li');
 
-const $btnRight = document.getElementById("next");
-const $btnLeft = document.getElementById("prev");
-
-let lengthItems = sliderSection.length - 1;
-let active = 1;
-
-function next() {
-    let $sliderSectionFirst = document.querySelectorAll(".list .img")[0];
-
-    $slider.style.marginLeft = "-200%";
-    $slider.style.transition = "margin-left .5s";
-    setTimeout(() => {
-        $slider.style.transition = "none";
-        $slider.insertAdjacentElement("beforeend", $sliderSectionFirst)
-        $slider.style.marginLeft = "-100%"
-    }, 500);
-
-	let last_active_dot = document.querySelector('.slider .dots li.active');
-    last_active_dot.classList.remove('active');
-    dots[active].classList.add('active');
-	
-	//reiniciamos el intervalo
-	intervalo.reiniciar(7000);
-}
-
-function prev() {
-    let sliderSection = document.querySelectorAll(".list .img");
-    let sliderSectionLast = sliderSection[sliderSection.length -1];
-    $slider.style.marginLeft = "0";
-    $slider.style.transition = "margin-left .5s";
-    setTimeout(() => {
-        $slider.style.transition = "none";
-        $slider.insertAdjacentElement("afterbegin", sliderSectionLast);
-        $slider.style.marginLeft = "-100%";
-    }, 500);
-	
-    let last_active_dot = document.querySelector('.slider .dots li.active');
-    last_active_dot.classList.remove('active');
-    dots[active].classList.add('active');
-	
-	//reiniciamos el intervalo
-	intervalo.reiniciar(7000);
-}
-
-$btnRight.addEventListener("click", function () {
-	active = active < lengthItems ? active + 1 : 0;
-    	next();
-})
-
-$btnLeft.addEventListener("click", function () {
-	active = active > 0 ? active - 1 : lengthItems;
-    	prev();
-})
-
-var intervalo = new Intervalo(function() {
-	active = active < lengthItems ? active + 1 : 0;
-    	next();
-}, 3000);
-
-dots.forEach((li, key) => {
-    li.addEventListener('click', ()=>{
-		let anterior = active;
-		active = key;
-		 if (anterior < active){
-			anterior = ((active - anterior) + 1);
-
-			let i = 1;
-			while (i < anterior){
-				let $sliderSectionFirst = document.querySelectorAll(".list .img")[0];
-				$slider.insertAdjacentElement("beforeend", $sliderSectionFirst);
-				i++;
-			}
-			let last_active_dot = document.querySelector('.slider .dots li.active');
-			last_active_dot.classList.remove('active');
-			dots[active].classList.add('active');
-
-			 //reiniciamos el intervalo
-			intervalo.reiniciar(7000);
-			 
-		 }else if (anterior > active){
-			anterior = ((anterior - active) + 1);
-
-			let i = 1;
-			while (i < anterior){
-				let sliderSection = document.querySelectorAll(".list .img");
-   			 	let sliderSectionLast = sliderSection[sliderSection.length -1];
-				$slider.insertAdjacentElement("afterbegin", sliderSectionLast);
-				i++;
-			}
-
-			let last_active_dot = document.querySelector('.slider .dots li.active');
-			last_active_dot.classList.remove('active');
-			dots[active].classList.add('active');	
-
-			 //reiniciamos el intervalo
-			intervalo.reiniciar(7000);
-		 }
-    });
+//Slider efecto cubo
+var swiperCubo = new Swiper(".slider-disenio-grafico .cubo", {
+	effect: "cube",
+	grabCursor: true,
+	cubeEffect: {
+	  shadow: true,
+	  slideShadows: true,
+	  shadowOffset: 20,
+	  shadowScale: 0.94,
+	},
+	autoplay: {
+		delay: 3000,
+		disableOnInteraction: false,
+	  },
+	pagination: {
+	  el: ".slider-disenio-grafico .swiper-pagination",
+	  clickable: true,
+	},
+  });
+//slider certificados
+const progressCircle = document.querySelector(".autoplay-progress svg");
+const progressContent = document.querySelector(".autoplay-progress span");
+var swiper = new Swiper(".slider1 .mySwiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+	delay: 3000,
+	disableOnInteraction: false
+  },
+  pagination: {
+	el: ".slider1 .swiper-pagination",
+	clickable: true
+  },
+  navigation: {
+	nextEl: ".slider1 .swiper-button-next",
+	prevEl: ".slider1 .swiper-button-prev"
+  },
+  on: {
+	autoplayTimeLeft(s, time, progress) {
+	  progressCircle.style.setProperty("--progress", 1 - progress);
+	  progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+	}
+  }
 });
 //fin slider
 
@@ -213,32 +154,4 @@ if ('share' in navigator) {
 	}
 }else{
 	navigator.clipboard.writeText('https://christian-ortiz.github.io/Tarjeta-Digital/');
-}
-
-// Objeto Intervalo para poder reiniciar, detener y comenzar
-function Intervalo(fn, t) {
-    var intervaloObj = setInterval(fn, t);
-
-    this.detener = function() {
-        if (intervaloObj) {
-            clearInterval(intervaloObj);
-            intervaloObj = null;
-        }
-        return this;
-    }
-
-    // iniciar el temporizador usando la configuración actual (si aún no se está ejecutando)
-    this.comenzar = function() {
-        if (!intervaloObj) {
-            this.detener();
-            intervaloObj = setInterval(fn, t);
-        }
-        return this;
-    }
-
-    // comenzar con un nuevo intervalo, detener el intervalo actual
-    this.reiniciar = function(nuevoT) {
-        t = nuevoT;
-        return this.detener().comenzar();
-    }
 }
