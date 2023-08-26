@@ -1008,11 +1008,11 @@ usando el truco de la cuadrícula css*/
     gap: 0;
 }
 .qr .titulo-seccion {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--blanco);
     padding: .4rem 2rem;
     border-bottom: 1px solid var(--blanco);
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 .qr .user {
     width: 60px;
@@ -1021,7 +1021,7 @@ usando el truco de la cuadrícula css*/
     justify-content: center;
     align-items:end;
     font-size: 1.2rem;
-    background: var(--fondo);
+    background: var(--boton);
     border: 4px solid var(--blanco);
     border-radius: 50%;
     position: relative;
@@ -1029,7 +1029,7 @@ usando el truco de la cuadrícula css*/
 }
 .qr .user i {
     font-size: 45px;
-    color: var(--boton);
+    color: var(--blanco);
     opacity: .2;
 }
 .qr .caja-qr {
@@ -1070,7 +1070,7 @@ usando el truco de la cuadrícula css*/
     margin: 20px 5% 20px 5%;
 }
 .qr button {
-    margin: 20px auto 30px auto;
+    margin: 20px auto 50px auto;
     padding: .6rem 1.2rem;
     font-size: 1.2rem;
     background: var(--boton);
@@ -1083,32 +1083,21 @@ usando el truco de la cuadrícula css*/
 .qr button:hover{
     scale: 1.2;
 }
-footer {
-    padding-top: 30px;
-    background:  var(--fondo);
-    height: 290px;
-}
 .footer {
+    background: linear-gradient(var(--fondo), var(--negro));
     margin: auto;
-    width: 90%;
+    width: 100%;
     height: 100%;
-    padding-top: 20px;
-    justify-content: space-between;
-    border-top: 1px solid var(--blanco);
+    padding: 20px 5%;
+    gap: 2.5rem;
+}
+.footer .titulo-seccion {
+  font-size: 1.4rem;
+  color: var(--blanco);
+  padding: 0 2rem .4rem 2rem;
+  border-bottom: 1px solid var(--blanco);
 }
 .footer .caja-redes {
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.footer .caja-redes p {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--negro);
-    color: var(--boton);
-    font-size: 1.2em;
-}
-.footer .caja-redes .redes {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1116,7 +1105,7 @@ footer {
     height: auto;
     width: 100%;
 }
-.footer .caja-redes .redes a {
+.footer .caja-redes a {
     width: 40px;
     height: 40px;
     display: flex;
@@ -1129,12 +1118,12 @@ footer {
     cursor: pointer;
     transition: 0.3s;
 }
-.footer .caja-redes .redes a:hover {
+.footer .caja-redes a:hover {
     scale: 1.2;
 }
 
-.footer p:last-child {
-    border-top: 1px solid var(--negro);
+.footer p {
+    border-top: 1px solid var(--blanco);
     padding: 1.5em 0;
 }
 .footer p span {
