@@ -461,7 +461,7 @@ header, main, footer {
 
 .cabecera .info h4 {
 	font-size: 0.75rem;
-	font-weight: 300;
+	font-weight: 400;
 	width: fit-content;
 	color: var(--blanco);
 }
@@ -972,7 +972,7 @@ usando el truco de la cuadrícula css*/
 	align-items: center;
 	justify-content: center;
 	font-weight: bold;
-	color: var(--fondo);
+	color: var(--boton);
 }
 
 .slider1 .autoplay-progress svg {
@@ -984,7 +984,7 @@ usando el truco de la cuadrícula css*/
 	width: 100%;
 	height: 100%;
 	stroke-width: 4px;
-	stroke: var(--fondo);
+	stroke: var(--boton);
 	fill: none;
 	stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
 	stroke-dasharray: 125.6;
@@ -1004,7 +1004,7 @@ usando el truco de la cuadrícula css*/
 }
 
 .slider1 .mySwiper :is(.swiper-pagination-bullet){
-	background: var(--fondo);
+	background: var(--boton);
 }
 
 .slider1 .mySwiper :is(.swiper-button-next, .swiper-button-prev)::after {
@@ -1191,7 +1191,7 @@ usando el truco de la cuadrícula css*/
 	align-items: center;
 	font-size: 1.2rem;
 	color: var(--blanco);
-	border: 2px solid var(--blanco);
+	border: 1px solid var(--boton);
 	border-radius: 50%;
 	cursor: pointer;	
 	transition: 0.3s;
