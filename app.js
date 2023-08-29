@@ -1,9 +1,9 @@
 //loading
 window.onload = function() {
 	document.getElementById("loading-page").className += " loaded";
-    	document.getElementById("loader").className += " opzero";
+	document.getElementById("loader").className += " opzero";
 	document.getElementById("lastray").className += " finalray";
-    	document.body.classList.remove('hidden');
+	document.body.classList.remove('hidden');
 }
 //fin loading
 
@@ -56,74 +56,51 @@ detailsItem.forEach(item => {
 	});
 });
 
-//fondo animado lluvia
-function rain() {
-	let amount = 150;
-	let body = document.querySelector('#fondo');
-	let i = 0;
-	while (i < amount){
-		let drop = document.createElement('i');
-
-		let size = Math.random() * 5;
-		let posX = Math.floor(Math.random() * body.clientWidth);
-
-		let delay = Math.random() * -20;
-		let duration = Math.random() * 5;
-
-		drop.style.width = 0.2 + size + 'px';
-		drop.style.left = posX + 'px';
-		drop.style.animationDelay = delay + 's';
-		drop.style.animationDuration = 1 + duration + 's';
-
-		body.appendChild(drop);
-		i++
-	}
-}
-rain();
-
 //slider
 
 //Slider efecto cubo
 var swiperCubo = new Swiper(".slider-disenio-grafico .cubo", {
+	loop: true,
 	effect: "cube",
 	grabCursor: true,
 	cubeEffect: {
-	  shadow: true,
-	  slideShadows: true,
-	  shadowOffset: 20,
-	  shadowScale: 0.94,
+		shadow: true,
+		slideShadows: true,
+		shadowOffset: 20,
+		shadowScale: 0.94,
 	},
 	autoplay: {
 		delay: 3000,
 		disableOnInteraction: false,
 	  },
 	pagination: {
-	  el: ".slider-disenio-grafico .swiper-pagination",
-	  clickable: true,
+		el: ".slider-disenio-grafico .swiper-pagination",
+		clickable: true,
 	},
   });
 //slider certificados
 const progressCircle = document.querySelector(".autoplay-progress svg");
 const progressContent = document.querySelector(".autoplay-progress span");
 var swiper = new Swiper(".slider1 .mySwiper", {
-  spaceBetween: 30,
-  centeredSlides: true,
-  autoplay: {
-	delay: 3000,
-	disableOnInteraction: false
-  },
-  pagination: {
-	el: ".slider1 .swiper-pagination",
-	clickable: true
-  },
-  navigation: {
-	nextEl: ".slider1 .swiper-button-next",
-	prevEl: ".slider1 .swiper-button-prev"
-  },
-  on: {
-	autoplayTimeLeft(s, time, progress) {
-	  progressCircle.style.setProperty("--progress", 1 - progress);
-	  progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+	loop: true,
+	spaceBetween: 30,
+	centeredSlides: true,
+	autoplay: {
+		delay: 3000,
+		disableOnInteraction: false
+  	},
+	pagination: {
+		el: ".slider1 .swiper-pagination",
+		clickable: true
+	},
+	navigation: {
+		nextEl: ".slider1 .swiper-button-next",
+		prevEl: ".slider1 .swiper-button-prev"
+	},
+	on: {
+		autoplayTimeLeft(s, time, progress) {
+		progressCircle.style.setProperty("--progress", 1 - progress);
+		progressContent.textContent = `${Math.ceil(time / 1000)}s`;
 	}
   }
 });
@@ -155,3 +132,22 @@ if ('share' in navigator) {
 }else{
 	navigator.clipboard.writeText('https://christian-ortiz.github.io/Tarjeta-Digital/');
 }
+
+var chatbox = document.getElementById('fb-customer-chat');
+chatbox.setAttribute("page_id", "1833641983395100");
+chatbox.setAttribute("attribution", "biz_inbox");
+
+window.fbAsyncInit = function() {
+  FB.init({
+	xfbml            : true,
+	version          : 'v17.0'
+  });
+};
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
