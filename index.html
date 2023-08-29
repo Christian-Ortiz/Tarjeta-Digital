@@ -68,9 +68,7 @@
             </div>
         </div>
         <div class="banner">
-            <div class="fondo" id="fondo">
-                <!--<img src="imagenes/fondo.jpg" alt="">-->
-            </div>
+            <img class="img-fondo" src="imagenes/fondo-1.jpg" alt="">
             <div class="columna">
                 <div class="caja">
                     <div class="imagen">
@@ -88,27 +86,29 @@
                 </div>
             </div>
         </div>
-        <div class="skew-der"></div>
-        <div class="skew-izq"></div>
     </header>
     <main>
         <div class="seccion-cuerpo links">
-            <a class="caja" href="tel:+51917482843">
+            <div class="skew-arriba"></div>
+            <div class="img-fondo"></div>
+            <span class="titulo-seccion"><i class="fa-regular fa-message"></i> Contáctame</span>
+            <a class="caja" style="color: #0e7224;" href="tel:+51917482843">
                 <span class="icono"><i class="fa-solid fa-phone"></i></span>
                 <span class="texto">Llámame a mi celular</span>
             </a>
-            <a class="caja" href="mailto:christianortiz1906@gmail.com" target="_blank">
+            <a class="caja" style="color: #e95151;" href="mailto:christianortiz1906@gmail.com" target="_blank">
                 <span class="icono"><i class="fa-regular fa-envelope"></i></span>
                 <span class="texto">Envíame un correo</span>
             </a>
-            <a class="caja" href="https://api.whatsapp.com/send?phone=+51917482843&text=Hola Christian" target="_blank">
+            <a class="caja" style="color: #25D366;" href="https://api.whatsapp.com/send?phone=+51917482843&text=Hola Christian" target="_blank">
                 <span class="icono"><i class="fa-brands fa-whatsapp"></i></span>
                 <span class="texto">Escríbeme por WhatsApp</span>
             </a>
-            <a class="caja" href="https://t.me/Christian-Ortiz-19" target="_blank">
+            <a class="caja" style="color: #229ED9;" href="https://t.me/Christian-Ortiz-19" target="_blank">
                 <span class="icono"><i class="fab fa-telegram-plane"></i></span>
                 <span class="texto">Escríbeme por Telegram</span>
             </a>
+            <div class="skew-abajo"></div>
         </div>
 
         <div class="seccion-cuerpo desplegables">
@@ -195,7 +195,7 @@
                             <p>
                                 Ofimática, diseño y desarrollo web
                             </p>
-                            <h4 class="titulo">Contáctame</h4>
+                            <h4 class="titulo"><i class="fa-regular fa-message"></i>  Contáctame</h4>
                             <div class="contactame">
                                 <a href="tel:+51917482843">
                                     <span class="icono"><i class="fa-solid fa-phone"></i></span>
@@ -247,7 +247,9 @@
             <!--fin swiper-->
         </div>
         <!-- fin slider -->
-        <div class="seccion-cuerpo desplegables">
+        <div class="seccion-cuerpo desplegables sec-ubi">
+            <div class="skew-arriba"></div>
+            <div class="img-fondo"></div>
             <div class="details-menu">
                 <div class="detail-item">
                     <div class="detail-title">
@@ -273,18 +275,19 @@
                     </div>
                 </div>
             </div>
+            <div class="google-maps">
+                <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1143.4685345424534!2d-78.52664228054465!3d-7.142767869195367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b25a60a99d16e1%3A0x1516ae3cbc637aa5!2sEl%20Canal%20187-161%2C%20Cajamarca%2006001!5e0!3m2!1ses!2spe!4v1692313411910!5m2!1ses!2spe" 
+                width="600" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="skew-abajo"></div>
         </div>
         
-        <div class="google-maps">
-            <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1143.4685345424534!2d-78.52664228054465!3d-7.142767869195367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91b25a60a99d16e1%3A0x1516ae3cbc637aa5!2sEl%20Canal%20187-161%2C%20Cajamarca%2006001!5e0!3m2!1ses!2spe!4v1692313411910!5m2!1ses!2spe" 
-            width="600" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
         <div class="seccion-cuerpo qr">
             <span class="titulo-seccion"><i class="fa-solid fa-qrcode"></i> Mi código QR</span>
             <span class="user"><i class="fa-solid fa-user"></i></span>
@@ -301,6 +304,7 @@
     </main>
     <footer>
         <div class="seccion-cuerpo footer">
+            <div class="skew-arriba"></div>
             <span class="titulo-seccion"><i class="fa-regular fa-heart"></i> Mis redes sociales</span>
             <div class="caja-redes">
                     <a href="https://www.facebook.com/profile.php?id=100008683933746" target="_blank" style="background: #1877f2;"><i class="fa-brands fa-facebook-f"></i></a>
@@ -311,6 +315,13 @@
             </div>
             <p><span>Copyright© 2023 - Todos los Derechos Reservados</span> | Christian Jhulino Ortiz Cholán - <span>Desarrollador Web</span></p>
         </div>
+        
+         <!-- Messenger Plugin de chat Code -->
+        <div id="fb-root"></div>
+
+        <!-- Your Plugin de chat code -->
+        <div id="fb-customer-chat" class="fb-customerchat"></div>
+    
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
