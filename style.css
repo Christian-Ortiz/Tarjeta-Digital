@@ -927,6 +927,10 @@ usando el truco de la cuadrícula css*/
 	width: 100%;
 }
 
+.slider-disenio-grafico .mySwiper :is(.swiper-pagination-bullet){
+	background: var(--boton);
+}
+
 /*fin slider cubo diseño grafico*/
 /*slider*/
 .slider1 {
