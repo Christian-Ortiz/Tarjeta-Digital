@@ -4,6 +4,7 @@ window.onload = function() {
 	document.getElementById("loader").className += " opzero";
 	document.getElementById("lastray").className += " finalray";
 	document.body.classList.remove('hidden');
+	document.getElementById("whatsapp").className += " whatsapp-f-a";
 }
 //fin loading
 
