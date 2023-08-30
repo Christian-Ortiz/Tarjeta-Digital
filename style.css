@@ -388,6 +388,32 @@ body {
 	color: var(--negro);
 }
 
+.WhatsApp-flotante {
+	position: fixed;
+	bottom: -100px;
+	left: 24px;
+	width: 2.5rem;
+	height: 2.5rem;
+	background: #25D366;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	z-index: 1001;
+	transition: 0.5s;
+	border-radius: 50%;
+	transition: bottom ease-out .5s;
+}
+
+.WhatsApp-flotante > i {
+	font-size: 1.4rem;
+	color: #fff;
+}
+
+.whatsapp-f-a {
+	bottom: 140px;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
