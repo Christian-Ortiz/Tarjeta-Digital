@@ -32,7 +32,7 @@ window.onscroll = () => {
 	}else{ 
 		menuContent.style.top = '0';
 		//Mostrar Go Top 
-		goTop.style.right = '15px'; 
+		goTop.style.right = '24px'; 
 	} 
 } 
 //Go Top Click 
@@ -106,6 +106,27 @@ var swiper = new Swiper(".slider1 .mySwiper", {
 });
 //fin slider
 
+//Plugin chat de Messenger
+var chatbox = document.getElementById('fb-customer-chat');
+chatbox.setAttribute("page_id", "1833641983395100");
+chatbox.setAttribute("attribution", "biz_inbox");
+
+window.fbAsyncInit = function() {
+  FB.init({
+	xfbml            : true,
+	version          : 'v17.0'
+  });
+};
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+//Fin plugin chat de Messenger
+
 //boton compartir
 const boton = document.querySelector('#compartir');
 if ('share' in navigator) {
@@ -132,22 +153,3 @@ if ('share' in navigator) {
 }else{
 	navigator.clipboard.writeText('https://christian-ortiz.github.io/Tarjeta-Digital/');
 }
-
-var chatbox = document.getElementById('fb-customer-chat');
-chatbox.setAttribute("page_id", "1833641983395100");
-chatbox.setAttribute("attribution", "biz_inbox");
-
-window.fbAsyncInit = function() {
-  FB.init({
-	xfbml            : true,
-	version          : 'v17.0'
-  });
-};
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
