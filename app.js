@@ -143,13 +143,7 @@ if ('share' in navigator) {
 			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
 			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
 			files: [file],
-		});
-		.then(()=>{
-
-		});
-		.catch(()=>{
-			alert('No se compartió.');
-		});
+		})
 	}
 }else{
 	navigator.clipboard.writeText('https://christian-ortiz.github.io/Tarjeta-Digital/');
