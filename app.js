@@ -132,10 +132,10 @@ window.fbAsyncInit = function() {
 const boton = document.querySelector('#compartir');
 if ('share' in navigator) {
 	boton.addEventListener('click', share);
-	function share() {
+	async function share() {
 
-		const img = url('imagenes/qrCompartir.png');
-		const blob = img.blob();
+		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qrCompartir.png');
+		const blob = await img.blob();
 		const file = new File([blob], 'qrCompartir.png', {type: 'image/png'});
 
 		navigator.share({
