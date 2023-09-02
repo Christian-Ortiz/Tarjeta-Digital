@@ -129,7 +129,7 @@ window.fbAsyncInit = function() {
 //Fin plugin chat de Messenger
 
 //boton compartir
-const boton = document.querySelector('#compartir');
+/*const boton = document.querySelector('#compartir');
 if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	async function share() {
@@ -153,4 +153,20 @@ if ('share' in navigator) {
 	}
 }else{
 	navigator.clipboard.writeText('https://christian-ortiz.github.io/Tarjeta-Digital/');
-}
+}*/
+const shareButton = document.querySelector('#compartir');
+shareButton.addEventListener("click", async () => {
+	const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qrCompartir.png');
+	const blob = await img.blob();
+  	const file = new File([blob], 'qr.png', { type: "image/png" });
+  	try {
+    		await navigator.share({
+      			title: "Example File",
+			text: "funciona",
+			url: "https://christian-ortiz.github.io/Tarjeta-Digital/",
+      			files: [file]
+    	});
+  	} catch (err) {
+    	console.error("Share failed:", err.message);
+  	}
+});
