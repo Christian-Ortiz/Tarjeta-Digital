@@ -392,8 +392,8 @@ body {
 	position: fixed;
 	bottom: -100px;
 	left: 24px;
-	width: 45px;
-	height: 45px;
+	width: 2.81rem;
+	height: 2.81rem;
 	background: #25D366;
 	display: flex;
 	justify-content: center;
@@ -406,7 +406,7 @@ body {
 }
 
 .WhatsApp-flotante > i {
-	font-size: 25px;
+	font-size: 1.6rem;
 	color: #fff;
 }
 
@@ -1187,7 +1187,7 @@ usando el truco de la cuadrícula css*/
 	margin: auto;
 	width: 100%;
 	height: 100%;
-	padding: 0 5%;
+	padding: 0 10%;
 	gap: 1.2rem;
 	padding-bottom: 2rem;
 }
