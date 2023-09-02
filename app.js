@@ -129,20 +129,20 @@ window.fbAsyncInit = function() {
 //Fin plugin chat de Messenger
 
 //boton compartir
-/*const boton = document.querySelector('#compartir');
+const boton = document.querySelector('#compartir');
 if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	async function share() {
 
 		const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qrCompartir.png');
 		const blob = await img.blob();
-		const file = new File([blob], 'qrCompartir.png', {type: 'image/png'});
+		const file = new File([blob], 'qr.png', {type: 'image/png'});
 
 		navigator.share({
 			title: "Christian Jhulino Ortiz Cholán",
-			text: "Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...",
+			text: "Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software... ",
 			url: "https://christian-ortiz.github.io/Tarjeta-Digital/",
-			files: [file],
+			files: [file]
 		})
 		.then(()=>{
 
@@ -153,20 +153,4 @@ if ('share' in navigator) {
 	}
 }else{
 	navigator.clipboard.writeText('https://christian-ortiz.github.io/Tarjeta-Digital/');
-}*/
-const shareButton = document.querySelector('#compartir');
-shareButton.addEventListener("click", async () => {
-	const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/perfil.jpg');
-	const blob = await img.blob();
-  	const file = new File([blob], 'qr.jpg', { type: "image/jpg" });
-  	try {
-    		await navigator.share({
-      			title: "Example File 1",
-			text: "funciona perfil",
-			url: "https://christian-ortiz.github.io/Tarjeta-Digital/1",
-      			files: [file]
-    	});
-  	} catch (err) {
-    	console.error("Share failed: "+ err.message);
-  	}
-});
+}
