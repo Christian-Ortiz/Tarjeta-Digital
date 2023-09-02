@@ -368,7 +368,7 @@ body {
 
 .go-top{
 	position: fixed;
-	bottom: 80px;
+	bottom: 24px;
 	right: -100%;
 	width: 2.5rem;
 	height: 2.5rem;
@@ -411,7 +411,7 @@ body {
 }
 
 .whatsapp-f-a {
-	bottom: 140px;
+	bottom: 24px;
 }
 
 a {
