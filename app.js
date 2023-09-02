@@ -167,6 +167,6 @@ shareButton.addEventListener("click", async () => {
       			files: [file]
     	});
   	} catch (err) {
-    	console.error("Share failed:", err.message);
+    	console.error("Share failed: "+ err.message);
   	}
 });
