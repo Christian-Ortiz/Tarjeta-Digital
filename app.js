@@ -139,9 +139,9 @@ if ('share' in navigator) {
 		const file = new File([blob], 'qrCompartir.png', {type: 'image/png'});
 
 		navigator.share({
-			title: 'Christian Jhulino Ortiz Cholán',
-			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
-			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
+			title: "Christian Jhulino Ortiz Cholán",
+			text: "Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...",
+			url: "https://christian-ortiz.github.io/Tarjeta-Digital/",
 			files: [file],
 		})
 		.then(()=>{
