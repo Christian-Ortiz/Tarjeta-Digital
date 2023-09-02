@@ -130,19 +130,26 @@ window.fbAsyncInit = function() {
 
 //boton compartir
 const boton = document.querySelector('#compartir');
-const img = url('imagenes/qrCompartir.png');
-const blob = img.blob();
-const file = new File([blob], 'qrCompartir.png', {type: 'image/png'});
 if ('share' in navigator) {
 	boton.addEventListener('click', share);
 	function share() {
+
+		const img = url('imagenes/qrCompartir.png');
+		const blob = img.blob();
+		const file = new File([blob], 'qrCompartir.png', {type: 'image/png'});
 
 		navigator.share({
 			title: 'Christian Jhulino Ortiz Cholán',
 			text: 'Técnico en Computación e Informática, Diseñador Gráfico y Desarrollador de Software...',
 			url: 'https://christian-ortiz.github.io/Tarjeta-Digital/',
 			files: [file],
-		})
+		});
+		.then(()=>{
+
+		});
+		.catch(()=>{
+			alert('No se compartió.');
+		});
 	}
 }else{
 	navigator.clipboard.writeText('https://christian-ortiz.github.io/Tarjeta-Digital/');
