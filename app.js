@@ -158,12 +158,12 @@ const shareButton = document.querySelector('#compartir');
 shareButton.addEventListener("click", async () => {
 	const img = await fetch('https://christian-ortiz.github.io/Tarjeta-Digital/imagenes/qrCompartir.png');
 	const blob = await img.blob();
-  	const file = new File(data, 'imagenes/qrCompartir.png', { type: "image/png" });
+  	const file = new File([], 'imagenes/qrCompartir.png', { type: "image/png" });
   	try {
     		await navigator.share({
-      			title: "Example File",
-			text: "funciona",
-			url: "https://christian-ortiz.github.io/Tarjeta-Digital/",
+      			title: "Example File 1",
+			text: "funciona 1",
+			url: "https://christian-ortiz.github.io/Tarjeta-Digital/1",
       			files: [file]
     	});
   	} catch (err) {
