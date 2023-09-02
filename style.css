@@ -1229,7 +1229,7 @@ usando el truco de la cuadrícula css*/
 
 .footer p {
 	border-top: 1px solid var(--blanco);
-	padding-top: 1.5em;
+	padding: 1.5rem 10% 0 10%;
 }
 
 .footer p span {
